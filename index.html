@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saima Resources — اردو کھیل</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fffaf0;font-family:'Noto Nastaliq Urdu','Noto Naskh Arabic',serif;color:#2b2b2b;line-height:2.2;text-align:center}
+.w{max-width:760px;margin:0 auto;padding:12px 16px 30px}
+.top{background:linear-gradient(90deg,#e53935,#fb8c00,#f9c20a,#43a047,#1e88e5,#8e24aa);color:#fff;border-radius:22px;padding:6px 12px;margin-top:8px}
+.top b{display:block;font:700 26px system-ui,sans-serif}.top span{font-size:19px}
+h2{font-size:20px;color:#1a237e;margin:18px 0 4px;border-bottom:3px solid #1a237e;line-height:2}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+a.c{display:block;text-decoration:none;color:#2b2b2b;background:#fff;border:4px solid var(--c);border-radius:20px;padding:6px 10px 10px}
+a.c .e{font-size:44px;line-height:1.5}a.c b{display:block;font-size:20px;line-height:1.9}a.c small{display:block;font:13px system-ui,sans-serif;color:#555;line-height:1.5}
+a.c i{display:inline-block;margin-top:6px;background:var(--c);color:#fff;border-radius:16px;padding:0 20px;font-style:normal;font-size:17px;line-height:2}
+.n{font-size:14px;color:#666;margin-top:22px}
+</style></head><body><div class="w">
+<div class="top"><b>SAIMA RESOURCES</b><span>اردو مادری زبان — کھیل اور سرگرمیاں</span></div>
+<div id="out"></div>
+<div class="n">اپنی جماعت کا کھیل چنیں۔ فون، ٹیبلیٹ اور کمپیوٹر پر کھلتا ہے۔</div>
+</div>
+<script>
+/* ===== نیا کھیل شامل کرنے کے لیے صرف نیچے ایک لائن بڑھائیں =====
+   l = جماعت کا گروپ, e = ایموجی, t = اردو نام, s = سویڈش نام, u = کھیل کا لنک, c = رنگ */
+var LIST=[
+ {l:'جماعت 1–3',c:'#43a047',e:'🧩',t:'جوڑ توڑ',s:'Pussla ihop orden',u:'jor-tor/'},
+ {l:'جماعت 1–3',c:'#fb8c00',e:'🔤',t:'حروفِ تہجی',s:'Alfabetet',u:'https://urdu-huroof-game.netlify.app'},
+ {l:'جماعت 1–3',c:'#e53935',e:'🎨',t:'رنگوں کے نام',s:'Färgernas namn',u:'games/rang.html'},
+ {l:'جماعت 4–9',c:'#8e24aa',e:'✏️',t:'الفاظ اور املا',s:'Ord och diktamen',u:'games/lafz.html'}
+];
+/* ================================================================ */
+var out=document.getElementById('out'),seen=[];
+LIST.forEach(function(g){if(seen.indexOf(g.l)<0)seen.push(g.l)});
+out.innerHTML=seen.map(function(l){return '<h2>'+l+'</h2><div class="g">'+LIST.filter(function(g){return g.l==l}).map(function(g){return '<a class="c" style="--c:'+g.c+'" href="'+g.u+'"><div class="e">'+g.e+'</div><b>'+g.t+'</b><small>'+g.s+'</small><i>کھیلیں</i></a>'}).join('')+'</div>'}).join('');
+</script></body></html>
